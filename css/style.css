@@ -1,3 +1,4 @@
+container
 /* css/style.css */
 :root {
     --bg-color: #ffffff;
@@ -23,6 +24,7 @@ ul { list-style: none; }
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
 }
 
 /* 导航栏 */
