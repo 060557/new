@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>应用收录夹 | 模</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/apps.css">
+
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo"><a href="index.html">模.</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="projects.html" class="active">功能</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container">
+    <div style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-secondary);">
+        <a href="projects.html">功能</a> <span style="margin:0 5px">/</span> 应用收录夹
+    </div>
+
+    <h2>应用收录夹</h2>
+    <p style="color:#666; margin-top:10px; margin-bottom: 30px;">这里收集了一些我常用的效率工具和有趣的应用。<br>本网站只用于网站收录，不提供任何存储服务。</p>
+    
+    <div class="search-section">
+        <input type="text" id="searchInput" class="search-box" placeholder="搜索应用名称...">
+    </div>
+
+    <div class="filter-tags">
+        <div class="tag active" onclick="filterApps('all', this)">全部</div>
+        <div class="tag" onclick="filterApps('efficiency', this)">效率工具</div>
+        <div class="tag" onclick="filterApps('design', this)">设计灵感</div>
+        <div class="tag" onclick="filterApps('dev', this)">开发资源</div>
+        <div class="tag" onclick="filterApps('video', this)">影视</div>
+    </div>
+
+    <div class="app-grid" id="appGrid">
+        
+        <div class="app-card" data-category="efficiency">
+            <img src="https://ts4.tc.mm.bing.net/th/id/ODF.Y_QwhzZ05mWrreC98oNZ8g?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" alt="ToDesk" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">ToDesk</div>
+                <div class="app-desc">免费远控软件</div>
+            </div>
+            <a href="https://https://www.todesk.com/" target="_blank" rel="noopener noreferrer" class="app-btn">访问</a>
+            <a href="https://dl.todesk.com/irrigation/ToDesk_4.8.3.3.exe" target="_blank" rel="noopener noreferrer" class="app-btn">下载</a>
+        </div>
+
+        <div class="app-card" data-category="efficiency">
+            <img src="images/icon.png" alt="clash-verge-rev" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">clash-verge-rev</div>
+                <div class="app-desc">链接世界的隧道</div>
+            </div>
+            <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener noreferrer" class="app-btn">查看</a>
+            <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/download/autobuild/Clash.Verge_2.4.4+autobuild.1124.0c00a39_x64-setup.exe" target="_blank" class="app-btn">下载</a>
+        </div>
+
+         <div class="app-card" data-category="efficiency">
+            <img src="images/icon.svg" alt="scrcpy" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">scrcpy</div>
+                <div class="app-desc">开源投屏软件</div>
+            </div>
+            <a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener noreferrer" class="app-btn">查看</a>
+            <a href="https://github.com/Genymobile/scrcpy/releases/download/v3.3.3/scrcpy-win64-v3.3.3.zip" target="_blank" rel="noopener noreferrer" class="app-btn">下载</a>
+        </div>
+
+        <div class="app-card" data-category="efficiency">
+            <img src="images/logo.png" alt="PrivyDrop" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">PrivyDrop</div>
+                <div class="app-desc">开源点对点文件传输</div>
+            </div>
+            <a href="https://www.privydorp.app/zh" target="_blank" rel="noopener noreferrer" class="app-btn">进入</a>
+        </div>
+
+        <div class="app-card" data-category="video">
+            <img src="https://www.dyg7.com/skin/dygang/images/logo.png" alt="电影港" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">电影港</div>
+                <div class="app-desc">高清电影在线观看下载</div>
+            </div>
+            <a href="https://www.dygang.cc" target="_blank" rel="noopener noreferrer" class="app-btn" id="app-wei">进入</a>
+        </div>
+
+        <div class="app-card" data-category="efficiency">
+            <img src="https://www.dyg7.com/skin/dygang/images/logo.png" alt="网易云解析" class="app-icon">
+            <div class="app-info">
+                <div class="app-name">网易云音乐无损解析</div>
+                <div class="app-desc">免费下载网易云无损音乐</div>
+            </div>
+            <a href="https://dygang.org" target="_blank" rel="noopener noreferrer" class="app-btn">进入</a>
+        </div>
+
+    </div>
+    <!-- 自定义弹窗 -->
+  <div class="adguard-modal" id="adguardModal">
+    <div class="modal-content">
+      <h3>需要 AdGuard 广告拦截插件</h3>
+      <p>为了获得最佳体验，建议安装官方 AdGuard 插件<br>（已安装的用户请点击下方“我已安装”）</p>
+      <div class="modal-buttons">
+        <button class="btn-install" onclick="installAdGuard()">去安装 AdGuard</button>
+        <button class="btn-continue" onclick="goAhead()">我已安装，继续进入</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+    &copy; 2025 模. All rights reserved.
+</footer>
+
+<script src="js/apps.js"></script>
+
+
+</body>
+</html>
